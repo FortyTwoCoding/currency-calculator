@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class IntroSceneController {
     @FXML
     Button goButton;
@@ -12,7 +14,9 @@ public class IntroSceneController {
     TextField textAbbreviation;
 
 
-    public void buttonclicked(ActionEvent event) {
-        System.out.println("button was clicked.");
+    public void buttonclicked(ActionEvent event) throws IOException {
+        String text = textAbbreviation.getText();
+        double value = main.getvalue(text);
+        System.out.println(value);
     }
 }
