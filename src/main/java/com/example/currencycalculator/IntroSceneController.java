@@ -12,7 +12,7 @@ public class IntroSceneController {
     TextField textAbbreviation;
 
 
-    public void buttonclicked(ActionEvent event){
+    public void buttonclicked(ActionEvent event) {
         System.out.println("button was clicked.");
     }
 }
