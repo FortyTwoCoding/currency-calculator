@@ -3,6 +3,7 @@ package com.example.currencycalculator;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -37,17 +38,13 @@ public class CurrencyCalculator extends Application {
                         value = 0.0;
                     }
                     System.out.println(value);
+
                 }
             }
         });
     }
 
-    public static void main(String[] args) {
-        try {
+    public static void main(String[] args) throws Exception{
             launch(args);
-        }
-        catch(Exception exception){
-            exception.printStackTrace();
-        }
     }
 }

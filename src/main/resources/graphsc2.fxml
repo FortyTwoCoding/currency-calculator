@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.currencycalculator.InfoSceneController">
    <children>
       <Label fx:id="titleofcurrency" alignment="CENTER" layoutY="6.0" prefHeight="17.0" prefWidth="600.0" text="Currency" textAlignment="CENTER">
@@ -12,5 +11,6 @@
             <Font name="Arial Black" size="25.0" />
          </font>
       </Label>
+      <Label layoutX="286.0" layoutY="213.0" text="Label" />
    </children>
 </AnchorPane>
