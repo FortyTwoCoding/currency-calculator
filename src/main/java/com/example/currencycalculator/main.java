@@ -50,6 +50,7 @@ public class main {
         for (String s : array2) {
             String[] result = s.split(":");
             result[0] = result[0].replace('"', ' ');
+            result[0] = result[0].replaceAll(" ", "");
             dictionary.put(result[0], result[1]);
 
         }
