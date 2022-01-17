@@ -58,7 +58,7 @@ public class main {
             String value2 = dictionary.get(name);
             System.out.println(name + " " + value2);
         }
-
+        //TODO: return values
         return value;
 
     }
