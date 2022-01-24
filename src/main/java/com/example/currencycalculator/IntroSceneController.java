@@ -27,9 +27,9 @@ public class IntroSceneController {
         InfoSceneController infoSceneController = fxmlLoader.getController();
 
         String currency1 = textAbbreviation1.getText();
-        System.out.println("currency1");
+        System.out.println(currency1);
         String currency2 = textAbbreviation2.getText();
-        System.out.println("currency2");
+        System.out.println(currency2);
         double value1 = GetPriceClass.getvalue(currency1);
         double value2 = GetPriceClass.getvalue(currency2);
         System.out.println(currency1+": "+value1+ currency2+": "+value2);
