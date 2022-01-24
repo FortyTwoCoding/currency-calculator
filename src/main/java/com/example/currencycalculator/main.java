@@ -28,7 +28,7 @@ public class main {
             }
             return test;
         }
-    public static Map<String, String> getcurrency(String base) throws IOException {
+    public static Map<String, Double> getcurrency(String base) throws IOException {
         String url = "https://api.exchangerate-api.com/v4/latest/";
         String[] commands = {"curl", "-X", "GET", url + base};
         Process process = Runtime.getRuntime().exec(commands);
@@ -38,9 +38,10 @@ public class main {
         while ((line = reader.readLine()) != null) {
             line2 = line;
             }
-        Map<String, String> dictionary = new HashMap<>();
+        Map<String, Double> dictionary = new HashMap<>();
         String[] array;
         line2 = line2.replaceAll("\\{", "/");
+        line2 = line2.replaceAll("}","/");
         array = line2.split("/");
         String rates = array[11];
         String[] array2;
@@ -49,11 +50,11 @@ public class main {
             String[] result = s.split(":");
             result[0] = result[0].replace('"', ' ');
             result[0] = result[0].replaceAll(" ", "");
-            dictionary.put(result[0], result[1]);
+            dictionary.put(result[0], Double.parseDouble(result[1]));
 
         }
         for (String name: dictionary.keySet()) {
-            String value2 = dictionary.get(name);
+            double value2 = dictionary.get(name);
             System.out.println(name + " " + value2);
         }
         //TODO: return values
