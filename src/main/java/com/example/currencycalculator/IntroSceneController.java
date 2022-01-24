@@ -33,7 +33,7 @@ public class IntroSceneController {
         double value1 = GetPriceClass.getvalue(currency1);
         double value2 = GetPriceClass.getvalue(currency2);
         System.out.println(currency1+": "+value1+ currency2+": "+value2);
-        double exchangerate = value2/value1;
+        double exchangerate = value1/value2;
         infoSceneController.exchangeratelabel(currency1, currency2, exchangerate);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
