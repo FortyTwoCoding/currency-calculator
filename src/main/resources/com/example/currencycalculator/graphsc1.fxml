@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.currencycalculator.IntroSceneController">
    <children>
-      <TextField fx:id="textAbbreviation" alignment="CENTER" layoutX="62.0" layoutY="275.0" prefHeight="26.0" prefWidth="477.0" promptText="Enter abbreviation for a currency" />
+      <TextField fx:id="textAbbreviation1" alignment="CENTER" layoutX="61.0" layoutY="276.0" prefHeight="26.0" prefWidth="233.0" promptText="Enter abbreviation for a currency" />
       <Label fx:id="labelTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="41.0" prefHeight="54.0" prefWidth="600.0" text="Currency Calculator">
          <font>
             <Font name="Arial Black" size="36.0" />
@@ -26,10 +26,11 @@
             <Font name="Arial Narrow" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="goButton" layoutX="273.0" layoutY="309.0" mnemonicParsing="false" onAction="#buttonclicked" text="Go!" textAlignment="CENTER">
+      <Button fx:id="goButton" layoutX="280.0" layoutY="311.0" mnemonicParsing="false" onAction="#switchToInfo" text="Go!" textAlignment="CENTER">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
+      <TextField fx:id="textAbbreviation" alignment="CENTER" layoutX="308.0" layoutY="276.0" prefHeight="26.0" prefWidth="233.0" promptText="Enter abbreviation for currency" />
    </children>
 </AnchorPane>

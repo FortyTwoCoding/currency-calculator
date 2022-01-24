@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.currencycalculator.InfoSceneController">
    <children>
-      <Label fx:id="titleofcurrency" alignment="CENTER" layoutY="6.0" prefHeight="17.0" prefWidth="600.0" text="Currency" textAlignment="CENTER">
+      <Label fx:id="titleofcurrency" alignment="CENTER" prefHeight="17.0" prefWidth="600.0" text="Currency Calculator" textAlignment="CENTER">
          <font>
-            <Font name="Arial Black" size="25.0" />
+            <Font name="Arial Black" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="286.0" layoutY="213.0" text="Label" />
+      <TableView layoutX="14.0" layoutY="182.0" prefHeight="204.0" prefWidth="262.0">
+        <columns>
+          <TableColumn fx:id="columncurrency1" prefWidth="130.0" text="C1" />
+          <TableColumn fx:id="currency1inFIAT" prefWidth="131.0" text="C2" />
+        </columns>
+      </TableView>
+      <TableView layoutX="324.0" layoutY="182.0" prefHeight="204.0" prefWidth="262.0">
+        <columns>
+          <TableColumn fx:id="columncurrency2" prefWidth="132.0" text="C1" />
+          <TableColumn fx:id="currency2inFIAT" prefWidth="129.0" text="C2" />
+        </columns>
+      </TableView>
+      <Label fx:id="exchangeRate" alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="116.0" prefHeight="27.0" prefWidth="461.0" text="1 DOGE = 2 BTC" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
