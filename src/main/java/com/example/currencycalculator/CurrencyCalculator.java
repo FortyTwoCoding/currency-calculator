@@ -31,7 +31,7 @@ public class CurrencyCalculator extends Application {
                     String text = controller.textAbbreviation1.getText();
                     double value;
                     try {
-                        value = main.getvalue(text);
+                        value = GetPriceClass.getvalue(text);
                     } catch (Exception e) {
                         value = 0.0;
                     }
