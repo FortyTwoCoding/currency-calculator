@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
-public class main {
+public class GetPriceClass {
     public static double getvalue(String value) throws java.io.IOException {
             double test = 0;
             //grab data from api
