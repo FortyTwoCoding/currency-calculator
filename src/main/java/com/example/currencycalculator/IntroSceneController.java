@@ -20,26 +20,24 @@ public class IntroSceneController {
     @FXML
     public TextField textAbbreviation2;
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-
     public void buttonclicked(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("graphsc2.fxml"));
-        root = fxmlLoader.load();
+        Parent root = fxmlLoader.load();
 
         InfoSceneController infoSceneController = fxmlLoader.getController();
 
         String currency1 = textAbbreviation1.getText();
+        System.out.println("currency1");
         String currency2 = textAbbreviation2.getText();
+        System.out.println("currency2");
         double value1 = GetPriceClass.getvalue(currency1);
         double value2 = GetPriceClass.getvalue(currency2);
         System.out.println(currency1+": "+value1+ currency2+": "+value2);
         double exchangerate = value2/value1;
         infoSceneController.exchangeratelabel(currency1, currency2, exchangerate);
 
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
