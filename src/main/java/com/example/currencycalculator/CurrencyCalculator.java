@@ -15,29 +15,26 @@ import java.io.IOException;
 public class CurrencyCalculator extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent root = fxmlLoader.load(CurrencyCalculator.class.getResource("graphsc1.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("graphsc1.fxml"));
+        Parent root = fxmlLoader.load();
         Scene insideofstage = new Scene(root);
         stage.setTitle("Currency Calculator");
         IntroSceneController controller = fxmlLoader.getController();
         stage.getIcons().add(new Image(getClass().getResourceAsStream("dogeicon.png")));
         stage.setScene(insideofstage);
         stage.show();
-        insideofstage.setOnKeyPressed(new EventHandler<>() {
-            @Override
-            public void handle(KeyEvent keyEvent) {
+        insideofstage.setOnKeyPressed(keyEvent -> {
 
-                if (keyEvent.getCode() == KeyCode.ENTER) {
-                    String text = controller.textAbbreviation1.getText();
-                    double value;
-                    try {
-                        value = GetPriceClass.getvalue(text);
-                    } catch (Exception e) {
-                        value = 0.0;
-                    }
-                    System.out.println(value);
-
+            if (keyEvent.getCode() == KeyCode.ENTER) {
+                String text = controller.textAbbreviation1.getText();
+                double value;
+                try {
+                    value = GetPriceClass.getvalue(text);
+                } catch (Exception e) {
+                    value = 0.0;
                 }
+                System.out.println(value);
+
             }
         });
     }
