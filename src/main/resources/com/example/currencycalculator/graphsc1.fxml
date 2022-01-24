@@ -31,6 +31,6 @@
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="textAbbreviation" alignment="CENTER" layoutX="308.0" layoutY="276.0" prefHeight="26.0" prefWidth="233.0" promptText="Enter abbreviation for currency" />
+      <TextField fx:id="textAbbreviation2" alignment="CENTER" layoutX="308.0" layoutY="276.0" prefHeight="26.0" prefWidth="233.0" promptText="Enter abbreviation for currency" />
    </children>
 </AnchorPane>
