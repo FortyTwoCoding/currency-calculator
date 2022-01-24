@@ -3,6 +3,7 @@ package com.example.currencycalculator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -36,6 +37,11 @@ public class IntroSceneController {
         System.out.println(currency1+": "+value1+ currency2+": "+value2);
         double exchangerate = value2/value1;
         infoSceneController.exchangeratelabel(currency1, currency2, exchangerate);
+
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
