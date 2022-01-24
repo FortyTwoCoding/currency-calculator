@@ -32,8 +32,8 @@ public class IntroSceneController {
 
         String currency1 = textAbbreviation1.getText();
         String currency2 = textAbbreviation2.getText();
-        double value1 = main.getvalue(currency1);
-        double value2 = main.getvalue(currency2);
+        double value1 = GetPriceClass.getvalue(currency1);
+        double value2 = GetPriceClass.getvalue(currency2);
         System.out.println(currency1+": "+value1+ currency2+": "+value2);
         double exchangerate = value2/value1;
         infoSceneController.exchangeratelabel(currency1, currency2, exchangerate);
