@@ -26,7 +26,7 @@
             <Font name="Arial Narrow" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="goButton" layoutX="280.0" layoutY="311.0" mnemonicParsing="false" onAction="#switchToInfo" text="Go!" textAlignment="CENTER">
+      <Button fx:id="goButton" layoutX="280.0" layoutY="311.0" mnemonicParsing="false" onAction="#buttonclicked" text="Go!" textAlignment="CENTER">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
