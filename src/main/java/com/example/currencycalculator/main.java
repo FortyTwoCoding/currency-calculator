@@ -28,8 +28,7 @@ public class main {
             }
             return test;
         }
-    public static double getcurrency(String base) throws IOException {
-        double value;
+    public static Map<String, String> getcurrency(String base) throws IOException {
         String url = "https://api.exchangerate-api.com/v4/latest/";
         String[] commands = {"curl", "-X", "GET", url + base};
         Process process = Runtime.getRuntime().exec(commands);
@@ -43,7 +42,6 @@ public class main {
         String[] array;
         line2 = line2.replaceAll("\\{", "/");
         array = line2.split("/");
-        value = 0;
         String rates = array[11];
         String[] array2;
         array2 = rates.split(",");
@@ -59,7 +57,7 @@ public class main {
             System.out.println(name + " " + value2);
         }
         //TODO: return values
-        return value;
+        return dictionary;
 
     }
 
