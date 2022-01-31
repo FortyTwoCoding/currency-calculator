@@ -2,6 +2,7 @@ package com.example.currencycalculator;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -30,14 +31,26 @@ public class CurrencyCalculator extends Application {
         insideofstage.setOnKeyPressed(keyEvent -> {
 
             if (keyEvent.getCode() == KeyCode.ENTER) {
-                String text = controller.textAbbreviation1.getText();
-                double value;
                 try {
-                    value = GetPriceClass.getvalue(text);
-                } catch (Exception e) {
-                    value = 0.0;
+                    FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("graphsc2.fxml"));
+                    Parent root2 = fxmlLoader2.load();
+
+                    InfoSceneController infoSceneController = fxmlLoader2.getController();
+
+                    String currency1 = controller.textAbbreviation1.getText();
+                    String currency2 = controller.textAbbreviation2.getText();
+                    double value1 = GetPriceClass.getvalue(currency1);
+                    double value2 = GetPriceClass.getvalue(currency2);
+                    double exchangerate = value1 / value2;
+                    infoSceneController.exchangeratelabel(currency1, currency2, exchangerate);
+
+                    Scene scene = new Scene(root2);
+                    stage.setScene(scene);
+                    stage.show();
                 }
-                System.out.println(value);
+                catch (IOException e){
+                    e.printStackTrace();
+                }
 
             }
         });
