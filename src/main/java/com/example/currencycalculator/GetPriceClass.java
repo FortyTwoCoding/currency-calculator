@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GetPriceClass {
-    public static double getvalue(String value) throws java.io.IOException {
+    public static double getvalue(String value) throws IOException {
             double test = 0;
             //grab data from api
             String header = "X-CoinAPI-Key: E9049DF1-05DA-4BC3-AEBF-A277A63901E6";
