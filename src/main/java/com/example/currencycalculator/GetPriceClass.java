@@ -75,7 +75,7 @@ public class GetPriceClass {
     }
 
     //used to print a map
-    private static void printMap(Map<String, Double> map){
+    public static void printMap(Map<String, Double> map){
         for (String name: map.keySet()) {
             double value2 = map.get(name);
             System.out.println(name + " " + value2);
