@@ -28,7 +28,6 @@ public class GetPriceClass {
                     test1.name = solution[0];
                     test1.name = test1.name.replace('"', ' ');
                     test1.name = test1.name.replaceAll(" ", "");
-                    System.out.println(test1.name);
                 }
                 if (i == 16) {
                     String[] solution = line.split(": ");
@@ -43,35 +42,41 @@ public class GetPriceClass {
         }
 
 
-    public static Map<String, Double> getcurrency(String base) throws IOException {
+    public static Map<String, Double> getcurrency(String base){
         //get prices from api
-        String url = "https://api.exchangerate-api.com/v4/latest/";
-        String[] commands = {"curl", "-X", "GET", url + base};
-        Process process = Runtime.getRuntime().exec(commands);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-        String line2 = " ";
-        String line;
-        //grab return values
-        while ((line = reader.readLine()) != null) {
-            line2 = line;
+        try {
+            String url = "https://api.exchangerate-api.com/v4/latest/";
+            String[] commands = {"curl", "-X", "GET", url + base};
+            Process process = Runtime.getRuntime().exec(commands);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line2 = " ";
+            String line;
+            //grab return values
+            while ((line = reader.readLine()) != null) {
+                line2 = line;
             }
-        //save everything into a hashmap after cutting apart and sorting
-        Map<String, Double> dictionary = new HashMap<>();
-        String[] array;
-        line2 = line2.replaceAll("\\{", "/");
-        line2 = line2.replaceAll("}","/");
-        array = line2.split("/");
-        String rates = array[11];
-        String[] array2;
-        array2 = rates.split(",");
-        for (String s : array2) {
-            String[] result = s.split(":");
-            result[0] = result[0].replace('"', ' ');
-            result[0] = result[0].replaceAll(" ", "");
-            dictionary.put(result[0], Double.parseDouble(result[1]));
+            //save everything into a hashmap after cutting apart and sorting
+            Map<String, Double> dictionary = new HashMap<>();
+            String[] array;
+            line2 = line2.replaceAll("\\{", "/");
+            line2 = line2.replaceAll("}", "/");
+            array = line2.split("/");
+            String rates = array[11];
+            String[] array2;
+            array2 = rates.split(",");
+            for (String s : array2) {
+                String[] result = s.split(":");
+                result[0] = result[0].replace('"', ' ');
+                result[0] = result[0].replaceAll(" ", "");
+                dictionary.put(result[0], Double.parseDouble(result[1]));
+            }
+            //return the hashmap with Currency shortcut and respective price
+            return dictionary;
         }
-        //return the hashmap with Currency shortcut and respective price
-        return dictionary;
+        catch (IOException e){
+            Map<String, Double> dictionary = new HashMap<>();
+            return dictionary;
+        }
     }
 
     //used to print a map

@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class InfoSceneController implements Initializable {
@@ -34,22 +36,28 @@ public class InfoSceneController implements Initializable {
     TableColumn<Currency, String> columncurrency2;
     @FXML
     TableColumn<Currency, Double> currency2inFIAT;
-
+    Map<String,Double> map = GetPriceClass.getcurrency("usd");
+    //TODO fix
     ObservableList<Currency> list = FXCollections.observableArrayList(
-            new Currency("btc", 42,42,4,42)
+            new Currency("btc", map.get("usd"),map.get("chf"), map.get("rmb"),42)
     );
+    ObservableList<Currency> list2 = FXCollections.observableArrayList(
+            new Currency("",1,2,3,4)
+    );
+
     @Override
     public void initialize(URL url, ResourceBundle rb){
         columncurrency1.setCellValueFactory(new PropertyValueFactory<Currency, String>("name"));
-        currency1inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("price"));
+        currency1inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("usd"));
         columncurrency2.setCellValueFactory(new PropertyValueFactory<Currency, String>("name"));
-        currency2inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("price"));
+        currency2inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("usd"));
 
         c1table.setItems(list);
+        c2table.setItems(list);
 
     }
     public void exchangeratelabel(String currency1, String currency2, double exchangerate) throws IOException {
-        exchangeRate.setText("1"+currency1+" = "+exchangerate+" "+currency2);
+        exchangeRate.setText("1 "+currency1+" = "+exchangerate+" "+currency2);
     }
 
 }
