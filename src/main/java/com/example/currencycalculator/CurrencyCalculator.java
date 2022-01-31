@@ -9,18 +9,24 @@ import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+//Override of the start method from the Application class
 public class CurrencyCalculator extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        //create an fxmlLoader object with the fxml information of the intro scene
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("graphsc1.fxml"));
+        //create a root node for the scene, create scene
         Parent root = fxmlLoader.load();
         Scene insideofstage = new Scene(root);
+        //set title and icon of the window
         stage.setTitle("Currency Calculator");
-        IntroSceneController controller = fxmlLoader.getController();
         stage.getIcons().add(new Image(getClass().getResourceAsStream("dogeicon.png")));
+        //create a controller object of the IntroSceneController class to pass information between the controllers
+        IntroSceneController controller = fxmlLoader.getController();
+        //"make the window"
         stage.setScene(insideofstage);
         stage.show();
+        //KeyEventHandler when Enter is pressed in IntroScene
         insideofstage.setOnKeyPressed(keyEvent -> {
 
             if (keyEvent.getCode() == KeyCode.ENTER) {
@@ -36,7 +42,7 @@ public class CurrencyCalculator extends Application {
             }
         });
     }
-
+//launch method eventually initiates the start method => creates a window
     public static void main(String[] args) {
             launch(args);
     }
