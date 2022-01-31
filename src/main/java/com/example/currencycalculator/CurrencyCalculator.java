@@ -41,7 +41,9 @@ public class CurrencyCalculator extends Application {
                     String currency2 = controller.textAbbreviation2.getText();
                     GetPriceClass obj1 = GetPriceClass.getvalue(currency1);
                     double value1 = obj1.price;
+                    currency1 = obj1.name;
                     obj1 = GetPriceClass.getvalue(currency2);
+                    currency2 = obj1.name;
                     double value2 = obj1.price;
                     double exchangerate = value1 / value2;
                     infoSceneController.exchangeratelabel(currency1, currency2, exchangerate);
