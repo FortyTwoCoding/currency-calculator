@@ -26,6 +26,8 @@ public class GetPriceClass {
                     String integer = solution[1];
                     solution = integer.split(",");
                     test1.name = solution[0];
+                    test1.name = test1.name.replace('"', ' ');
+                    test1.name = test1.name.replaceAll(" ", "");
                     System.out.println(test1.name);
                 }
                 if (i == 16) {
