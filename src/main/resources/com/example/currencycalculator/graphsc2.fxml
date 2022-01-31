@@ -13,16 +13,16 @@
             <Font name="Arial Black" size="48.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="182.0" prefHeight="204.0" prefWidth="262.0">
+      <TableView fx:id="c1table" layoutX="14.0" layoutY="182.0" prefHeight="204.0" prefWidth="262.0">
         <columns>
-          <TableColumn fx:id="columncurrency1" prefWidth="130.0" text="C1" />
-          <TableColumn fx:id="currency1inFIAT" prefWidth="131.0" text="C2" />
+          <TableColumn fx:id="columncurrency1" prefWidth="130.0" text="1 DOGE" />
+          <TableColumn fx:id="currency1inFIAT" prefWidth="131.0" text="FIAT" />
         </columns>
       </TableView>
-      <TableView layoutX="324.0" layoutY="182.0" prefHeight="204.0" prefWidth="262.0">
+      <TableView fx:id="c2table" layoutX="324.0" layoutY="182.0" prefHeight="204.0" prefWidth="262.0">
         <columns>
-          <TableColumn fx:id="columncurrency2" prefWidth="132.0" text="C1" />
-          <TableColumn fx:id="currency2inFIAT" prefWidth="129.0" text="C2" />
+          <TableColumn fx:id="columncurrency2" prefWidth="132.0" text="1 BTC" />
+          <TableColumn fx:id="currency2inFIAT" prefWidth="129.0" text="FIAT" />
         </columns>
       </TableView>
       <Label fx:id="exchangeRate" alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="116.0" prefHeight="27.0" prefWidth="461.0" text="1 DOGE = 2 BTC" textAlignment="CENTER">
