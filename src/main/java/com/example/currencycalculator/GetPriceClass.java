@@ -6,8 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GetPriceClass {
-    public static double getvalue(String value) throws IOException {
-            double test = 0;
+    public double price;
+    public String name;
+    public static GetPriceClass getvalue(String value) throws IOException {
+            GetPriceClass test1 = new GetPriceClass();
             //grab data from api
             String header = "X-CoinAPI-Key: E9049DF1-05DA-4BC3-AEBF-A277A63901E6";
             String[] commands = {"curl", "-H", header, "-X", "GET", "http://rest.coinapi.io/v1/assets/" + value};
@@ -19,16 +21,23 @@ public class GetPriceClass {
             while ((line = reader.readLine()) != null) {
                 i++;
                 //grab the 16th line and split apart to save the price
+                if (i== 4){
+                    String[] solution = line.split(": ");
+                    String integer = solution[1];
+                    solution = integer.split(",");
+                    test1.name = solution[0];
+                    System.out.println(test1.name);
+                }
                 if (i == 16) {
                     String[] solution = line.split(": ");
                     String integer = solution[1];
                     solution = integer.split(",");
                     integer = solution[0];
-                    test = Double.parseDouble(integer);
-                    return test;
+                    test1.price = Double.parseDouble(integer);
+                    return test1;
                 }
             }
-            return test;
+            return test1;
         }
 
 
