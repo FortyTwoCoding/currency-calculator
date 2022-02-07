@@ -1,23 +1,15 @@
 package com.example.currencycalculator;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -36,10 +28,13 @@ public class InfoSceneController implements Initializable {
     TableColumn<Currency, String> columncurrency2;
     @FXML
     TableColumn<Currency, Double> currency2inFIAT;
+    //TODO base should be input
     Map<String,Double> map = GetPriceClass.getcurrency("usd");
+
+
     //TODO fix
     ObservableList<Currency> list = FXCollections.observableArrayList(
-            new Currency("btc", map.get("usd"),map.get("chf"), map.get("rmb"),42)
+            new Currency("", map.get("USD"),map.get("CHF") , map.get("JPY"),map.get("CNY"))
     );
     ObservableList<Currency> list2 = FXCollections.observableArrayList(
             new Currency("",1,2,3,4)
@@ -51,7 +46,6 @@ public class InfoSceneController implements Initializable {
         currency1inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("usd"));
         columncurrency2.setCellValueFactory(new PropertyValueFactory<Currency, String>("name"));
         currency2inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("usd"));
-
         c1table.setItems(list);
         c2table.setItems(list);
 
@@ -59,5 +53,6 @@ public class InfoSceneController implements Initializable {
     public void exchangeratelabel(String currency1, String currency2, double exchangerate) throws IOException {
         exchangeRate.setText("1 "+currency1+" = "+exchangerate+" "+currency2);
     }
+
 
 }

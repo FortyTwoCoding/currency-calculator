@@ -8,6 +8,7 @@ import java.util.Map;
 public class GetPriceClass {
     public double price;
     public String name;
+    // source: https://stackoverflow.com/questions/1359689/how-to-send-http-request-in-java
     public static GetPriceClass getvalue(String value) throws IOException {
             GetPriceClass test1 = new GetPriceClass();
             //grab data from api
