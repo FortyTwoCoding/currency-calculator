@@ -6,6 +6,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GetPriceClass {
+    public GetPriceClass(String value){
+        try {
+            GetPriceClass getPriceClass = getvalue(value);
+            this.price = getPriceClass.price;
+            this.name = getPriceClass.name;
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public GetPriceClass() {
+    }
+
     public double price;
     public String name;
     // source: https://stackoverflow.com/questions/1359689/how-to-send-http-request-in-java
