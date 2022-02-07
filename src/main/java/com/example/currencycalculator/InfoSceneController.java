@@ -37,7 +37,7 @@ public class InfoSceneController implements Initializable {
             new Currency("", map.get("USD"),map.get("CHF") , map.get("JPY"),map.get("CNY"))
     );
     ObservableList<Currency> list2 = FXCollections.observableArrayList(
-            new Currency("",1,2,3,4)
+            new Currency("",map.get("USD"),map.get("CHF"),map.get("JPY"),map.get("CNY"))
     );
 
     @Override
@@ -47,7 +47,7 @@ public class InfoSceneController implements Initializable {
         columncurrency2.setCellValueFactory(new PropertyValueFactory<Currency, String>("name"));
         currency2inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("usd"));
         c1table.setItems(list);
-        c2table.setItems(list);
+        c2table.setItems(list2);
 
     }
     public void exchangeratelabel(String currency1, String currency2, double exchangerate) throws IOException {
