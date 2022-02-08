@@ -28,7 +28,7 @@ public class InfoSceneController implements Initializable {
     TableColumn<Currency, String> columncurrency2;
     @FXML
     TableColumn<Currency, Double> currency2inFIAT;
-    //TODO value should be input
+    //TODO base should be input
     GetPriceClass getPriceClass = new GetPriceClass("eth");
 
     Map<String,Double> map = GetPriceClass.getcurrency("usd");
