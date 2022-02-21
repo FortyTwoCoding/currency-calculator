@@ -28,8 +28,8 @@ public class InfoSceneController implements Initializable {
     TableColumn<Currency, String> columncurrency2;
     @FXML
     TableColumn<Currency, Double> currency2inFIAT;
-    //TODO base should be input
-    GetPriceClass getPriceClass = new GetPriceClass("eth");
+    GetPriceClass getPriceClass = new GetPriceClass(CurrencyCalculator.base1);
+    GetPriceClass getPriceClass2 = new GetPriceClass(CurrencyCalculator.base2);
 
     Map<String,Double> map = GetPriceClass.getcurrency("usd");
 
@@ -48,6 +48,10 @@ public class InfoSceneController implements Initializable {
         currency1inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("usd"));
         columncurrency2.setCellValueFactory(new PropertyValueFactory<Currency, String>("name"));
         currency2inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("usd"));
+        columncurrency1.setCellValueFactory(new PropertyValueFactory<Currency, String>("name"));
+        currency1inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("CHF"));
+        columncurrency2.setCellValueFactory(new PropertyValueFactory<Currency, String>("name"));
+        currency2inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("CHF"));
         c1table.setItems(list);
         c2table.setItems(list2);
 

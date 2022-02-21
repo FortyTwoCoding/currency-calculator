@@ -10,8 +10,14 @@ import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+
+
+
 //Override of the start method from the Application class
 public class CurrencyCalculator extends Application {
+    public static String base1;
+    public static String base2;
     @Override
     public void start(Stage stage) throws IOException {
         //create an fxmlLoader object with the fxml information of the intro scene

@@ -41,6 +41,8 @@ public class IntroSceneController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        CurrencyCalculator.base1 = currency1;
+        CurrencyCalculator.base2 = currency2;
     }
 
 }
