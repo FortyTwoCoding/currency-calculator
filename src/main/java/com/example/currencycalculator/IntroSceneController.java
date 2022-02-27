@@ -39,6 +39,12 @@ public class IntroSceneController {
 
         InfoSceneController infoSceneController = fxmlLoader.getController();
         infoSceneController.exchangeratelabel(currency1, currency2, exchangerate);
+        infoSceneController.columncurrency1.setText("FIAT");
+        infoSceneController.columncurrency2.setText("FIAT");
+        infoSceneController.currency1inFIAT.setText("Value");
+        infoSceneController.currency2inFIAT.setText("Value");
+        infoSceneController.leftfiattableheader.setText(currency1 +" in FIAT");
+        infoSceneController.rightfiattableheader.setText(currency2+" in FIAT");
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -2,7 +2,6 @@ package com.example.currencycalculator;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -57,7 +56,12 @@ public class CurrencyCalculator extends Application {
 
                     InfoSceneController infoSceneController = fxmlLoader2.getController();
                     infoSceneController.exchangeratelabel(currency1, currency2, exchangerate);
-
+                    infoSceneController.columncurrency1.setText("FIAT");
+                    infoSceneController.columncurrency2.setText("FIAT");
+                    infoSceneController.currency1inFIAT.setText("Value");
+                    infoSceneController.currency2inFIAT.setText("Value");
+                    infoSceneController.leftfiattableheader.setText(currency1 +" in FIAT");
+                    infoSceneController.rightfiattableheader.setText(currency2+" in FIAT");
                     Scene scene = new Scene(root2);
                     stage.setScene(scene);
                     stage.show();

@@ -27,12 +27,17 @@ public class InfoSceneController implements Initializable {
     TableColumn<Currency, String> columncurrency2;
     @FXML
     TableColumn<Currency, Double> currency2inFIAT;
+    @FXML
+    Label leftfiattableheader;
+    @FXML
+    Label rightfiattableheader;
     GetPriceClass getPriceClass = new GetPriceClass(CurrencyCalculator.base1);
     GetPriceClass getPriceClass2 = new GetPriceClass(CurrencyCalculator.base2);
 
     Map<String,Double> map = GetPriceClass.getcurrency("usd");
 
-    //TODO fix
+    //creates a list with objects of type Currency. They have a name and a value called currency
+
     ObservableList<Currency> list = FXCollections.observableArrayList(
             new Currency("usd", map.get("USD")*getPriceClass.price),
             new Currency("yen", map.get("JPY")*getPriceClass.price),
