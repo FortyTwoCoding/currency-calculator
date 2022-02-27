@@ -38,20 +38,24 @@ public class CurrencyCalculator extends Application {
 
             if (keyEvent.getCode() == KeyCode.ENTER) {
                 try {
+
+
+                    String currency1 = controller.textAbbreviation1.getText();
+                    String currency2 = controller.textAbbreviation2.getText();
+                    CurrencyCalculator.base1 = currency1;
+                    CurrencyCalculator.base2 = currency2;
+                    GetPriceClass obj1 = GetPriceClass.getvalue(currency1);
+                    GetPriceClass obj2 = GetPriceClass.getvalue(currency1);
+                    double value1 = obj1.price;
+                    currency1 = obj1.name;
+                    obj2 = GetPriceClass.getvalue(currency2);
+                    currency2 = obj2.name;
+                    double value2 = obj2.price;
+                    double exchangerate = value1/value2;
                     FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("graphsc2.fxml"));
                     Parent root2 = fxmlLoader2.load();
 
                     InfoSceneController infoSceneController = fxmlLoader2.getController();
-
-                    String currency1 = controller.textAbbreviation1.getText();
-                    String currency2 = controller.textAbbreviation2.getText();
-                    GetPriceClass obj1 = GetPriceClass.getvalue(currency1);
-                    double value1 = obj1.price;
-                    currency1 = obj1.name;
-                    obj1 = GetPriceClass.getvalue(currency2);
-                    currency2 = obj1.name;
-                    double value2 = obj1.price;
-                    double exchangerate = value1 / value2;
                     infoSceneController.exchangeratelabel(currency1, currency2, exchangerate);
 
                     Scene scene = new Scene(root2);

@@ -35,14 +35,14 @@ public class InfoSceneController implements Initializable {
 
     //TODO fix
     ObservableList<Currency> list = FXCollections.observableArrayList(
-            new Currency("usd", map.get("USD")),
-            new Currency("yen", map.get("JPY")),
-            new Currency("cny", map.get("CNY"))
+            new Currency("usd", map.get("USD")*getPriceClass.price),
+            new Currency("yen", map.get("JPY")*getPriceClass.price),
+            new Currency("cny", map.get("CNY")*getPriceClass.price)
     );
     ObservableList<Currency> list2 = FXCollections.observableArrayList(
-            new Currency("usd", map.get("USD")),
-            new Currency("yen", map.get("JPY")),
-            new Currency("cny", map.get("CNY"))
+            new Currency("usd", map.get("USD")*getPriceClass2.price),
+            new Currency("yen", map.get("JPY")*getPriceClass2.price),
+            new Currency("cny", map.get("CNY")*getPriceClass2.price)
     );
 
     @Override
