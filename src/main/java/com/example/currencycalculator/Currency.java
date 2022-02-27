@@ -12,6 +12,10 @@ public class Currency {
 
     }
 
+    public double getCurrency() {
+        return currency;
+    }
+
     public String getName() {
         return name;
     }

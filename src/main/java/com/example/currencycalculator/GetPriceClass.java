@@ -28,8 +28,8 @@ public class GetPriceClass {
     public static GetPriceClass getvalue(String value) throws IOException {
             GetPriceClass test1 = new GetPriceClass();
             //grab data from api
-            String header = "X-CoinAPI-Key: E9049DF1-05DA-4BC3-AEBF-A277A63901E6";
-            String[] commands = {"curl", "-H", header, "-X", "GET", "http://rest.coinapi.io/v1/assets/" + value};
+            String header = "X-CoinAPI-Key: 8337C59E-19F8-4FD0-960E-89F82CF978BA";
+            String[] commands = {"curl", "http://rest.coinapi.io/v1/assets/" + value+"?apikey=8337C59E-19F8-4FD0-960E-89F82CF978BA"};
             Process process = Runtime.getRuntime().exec(commands);
             BufferedReader reader = new BufferedReader(new
                     InputStreamReader(process.getInputStream()));
