@@ -39,18 +39,20 @@ public class InfoSceneController implements Initializable {
             new Currency("yen", map.get("JPY")),
             new Currency("cny", map.get("CNY"))
     );
-    /*ObservableList<Currency> list2 = FXCollections.observableArrayList(
-            new Currency("",map.get("USD"),map.get("CHF"),map.get("JPY"),map.get("CNY"))
-    );*/
+    ObservableList<Currency> list2 = FXCollections.observableArrayList(
+            new Currency("usd", map.get("USD")),
+            new Currency("yen", map.get("JPY")),
+            new Currency("cny", map.get("CNY"))
+    );
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
         columncurrency1.setCellValueFactory(new PropertyValueFactory<Currency, String>("name"));
         currency1inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("currency"));
-        //columncurrency2.setCellValueFactory(new PropertyValueFactory<Currency, String>("name"));
-        //currency2inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("currency"));
+        columncurrency2.setCellValueFactory(new PropertyValueFactory<Currency, String>("name"));
+        currency2inFIAT.setCellValueFactory(new PropertyValueFactory<Currency, Double>("currency"));
         c1table.setItems(list);
-        //c2table.setItems(list2);
+        c2table.setItems(list2);
 
     }
     public void exchangeratelabel(String currency1, String currency2, double exchangerate) throws IOException {
