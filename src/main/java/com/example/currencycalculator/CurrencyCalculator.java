@@ -44,10 +44,9 @@ public class CurrencyCalculator extends Application {
                     CurrencyCalculator.base1 = currency1;
                     CurrencyCalculator.base2 = currency2;
                     GetPriceClass obj1 = GetPriceClass.getvalue(currency1);
-                    GetPriceClass obj2 = GetPriceClass.getvalue(currency1);
+                    GetPriceClass obj2 = GetPriceClass.getvalue(currency2);
                     double value1 = obj1.price;
                     currency1 = obj1.name;
-                    obj2 = GetPriceClass.getvalue(currency2);
                     currency2 = obj2.name;
                     double value2 = obj2.price;
                     double exchangerate = value1/value2;
